@@ -1,11 +1,11 @@
   import React from "react";
-  import ReactStars from 'react-stars'  
+  import StarRatingComponent from 'react-star-rating-component';
 
   import QuoteDisp from "./components/QuoteDisp" ;
   import $ from 'jquery';
 
+
   const ratingChanged = (newRating) => {
-    console.log(newRating)
   }
 
 
@@ -19,12 +19,9 @@
       };
     }
 
-    updateRating = (r) =>{
-      this.setState({
-        rating: r
-      });
-
-    }
+   onStarClick(nextValue, prevValue, name) {
+    this.setState({rating: nextValue});
+      }
 
 
     handleOptionChange = changeEvent => {
@@ -79,6 +76,7 @@
         contentType: "application/json",
         data: JSON.stringify(jsonString),
         success: function(data){
+          console.log("Success inside ajax")
           console.log(data);
           console.log(jsonString);
         },
@@ -94,6 +92,7 @@
 
       this.setState({
             quote: "",
+            rating: 0,
             error: ""
         });
 
@@ -202,12 +201,13 @@
         />
       </div>
        <div>
-          <ReactStars
-          count= {5}
-          onChange={this.updateRating}
-          size= {24}
-          color2= {'#ffd700'}
-          />
+          <h2>Ratings for quote:</h2>
+          <StarRatingComponent 
+          name="rate1" 
+          starCount={5}
+          value={this.state.rating}
+          onStarClick={this.onStarClick.bind(this)}
+        />
           </div>
       </div>
     <button onClick={this.writetoDB}>pushDB</button>
