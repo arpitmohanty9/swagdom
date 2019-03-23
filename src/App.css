@@ -1,0 +1,24 @@
+/*@import url('https://fonts.googleapis.com/css?family=Merriweather:100,200,300,300i,400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+*/
+body {
+  font-family: "Open Sans", serif;
+  }
+  
+/*.star-widget
+  font-size 40px
+  &:hover {
+    .full {
+      color: #FFBFF00;
+    }
+  }
+
+.star-item
+  color: #aaa
+  cursor pointer
+  padding 1px
+  box-sizing border-box
+  &.full 
+    transition 0.25s all
+    color : #ffd300*/
